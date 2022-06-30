@@ -30,8 +30,8 @@ function calculateInterestOnlyLoanPayment(loanTerms: Loan): string {
 
 function calculateConventionalLoanPayment(loanTerms: ConventionalLoan) {
     // Calculates the monthly payment of a conventional loan
-    let interest = loanTerms.interestRate / 1200; // Calculates the Monthly Interest Rate of the loan
-    let payment;
+    let interest: number = loanTerms.interestRate / 1200; // Calculates the Monthly Interest Rate of the loan
+    let payment: number;
     payment = loanTerms.principal * interest / (1 - (Math.pow(1 / (1 + interest), loanTerms.months)));
     return 'The conventional loan payment is ' + payment.toFixed(2);
 }
